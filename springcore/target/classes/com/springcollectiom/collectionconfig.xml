@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- creating the beans for emp class -->
+<bean class="com.springcollectiom.Emp" name="Employee1"> 
+	 
+	<property name="name" value="Lucky Manikpuri" />
+	
+	<property name="phones"> 
+		<list> 
+			<value>7247657122</value> 
+			<value>7999109101</value>
+			<null/>
+		</list>
+	</property> 
+	
+	<property name="address"> 
+		<set> 
+			<value>Anjora, Rajnandgaon-491441</value> 
+			<value>Anjora, Durg-491001</value> 
+			<null/>
+		</set>
+	</property> 
+	
+	<property name="course"> 
+		<map> 
+			<entry key="Java" value="3 months"/> 
+			<entry key="DSA" value="6 months"/> 
+			<entry key="C" value="2 months"/>
+		</map>
+	</property>
+	
+</bean>
+</beans>

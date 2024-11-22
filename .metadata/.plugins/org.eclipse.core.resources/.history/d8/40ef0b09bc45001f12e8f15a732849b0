@@ -1,0 +1,53 @@
+package com.spring.jdbc;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.spring.jdbc.dao.StudentDao;
+import com.spring.jdbc.entites.Student;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "My program is started..." );
+        
+        //spring jdbc ==> JdbcTemplate
+        ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/configjdbc.xml");
+//        JdbcTemplate template = context.getBean("jdbcTemplate",JdbcTemplate.class);
+//        //insert query
+//        String query = "insert into student(id,name,city) values(?,?,?)";
+//        //fire query
+//        int result = template.update(query,246,"Manish Thakur","Kanpuriha");
+//        System.out.println("number of record inserted: "+result);
+   //----------------------------------------------------------------------------------------//      
+        /*StudentDao studentDao = context.getBean("studentDao",StudentDao.class);
+        Student student = new Student();
+        student.setId(100);
+        student.setName("Chandu");
+        student.setCity("Jaipur");
+        int result = studentDao.insert(student);
+        System.out.println("student is inserted: "+result);*/
+   //---------------------------------------------------------------------------------------//
+        //update query
+       /*StudentDao studentDao = context.getBean("studentDao",StudentDao.class);
+        Student student = new Student();
+        student.setId(100);
+        student.setName("Chandu Champion");
+        student.setCity("Goregaon");
+        int result = studentDao.change(student);
+        System.out.println("data changed: "+result);*/
+     //---------------------------------------------------------------------------------
+        //delete mathod
+        StudentDao studentDao = context.getBean("studentDao",StudentDao.class);
+        int result = studentDao.delete(246);
+        System.out.println("The record is deleted: "+result);
+        
+        
+        }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DOing the refrence type dependency injection of the getbean-->
+	<bean class="com.springcore.refrence.Address" name="address1">
+		<property name="city" value="Anjora" />
+		<property name="wardNo" value="ward-11" />
+		<property name="pinCode" value="491441" />
+	</bean>
+
+	<bean class="com.springcore.refrence.Persion" name="persion1">
+		<property name="firstName" value="Lucky" />
+		<property name="lastName" value="Manikpuri" />
+		<property name="age" value="21" />
+		<property name="fullAddress">
+			<ref bean="address1" />
+		</property>
+	</bean>
+</beans>

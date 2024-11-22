@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="https://www.springframework.org/schema/p"
+	xmlns:util="https://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+						">
+
+<!--Stand alone list--> 
+<util:list list-class="java.util.Vector" id="myname">
+	<value>Lucky</value>
+	<value>Ritika</value>
+	<value>Yatish</value>
+	<value>Saurabh</value>
+</util:list>
+
+<!--Stand alone list--> 
+<!--<util:list list-class="java.util.ArrayList" id="mynumber">
+	<value>7247657122</value>
+	<value>7999109101</value>
+</util:list>-->
+
+<!--stand alone map-->
+<!--<util: map-class="java.util.HashMap" id="mycourse"> 
+<entry key="Spring framework" value="8000" />
+<entry key="Springboot framework" value="10000" />
+<entry key="Hibernet framework" value="2000" />
+</util:>
+-->
+<!--creating the bean--> 
+
+<bean class="com.springcore.standalone.collection.Persion" name="persion"> 
+	<property name="name"> 
+		<list> 
+			<value>Lucky</value>
+	<value>Ritika</value>
+	<value>Yatish</value>
+	<value>Saurabh</value>
+		</list>
+		 </property>
+	<property name="mobile"> 
+		<list> 
+		<value>7247657122</value>
+	<value>7999109101</value>	
+		</list>
+		 </property>
+	<property name="course">  
+		<map> 
+			<entry key="Spring framework" value="8000" />
+<entry key="Springboot framework" value="10000" />
+<entry key="Hibernet framework" value="2000" />
+		</map>
+	</property>
+</bean>
+
+</beans>
